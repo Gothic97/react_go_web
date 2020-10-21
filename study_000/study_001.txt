@@ -1,0 +1,14 @@
+package main
+
+import "fmt"
+
+func main() {
+
+	myslice := []string{"one", "two", "three", "four"}
+	for i, item := range myslice {
+
+		fmt.Println(i, item)
+
+	}
+
+}

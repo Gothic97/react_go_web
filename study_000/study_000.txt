@@ -1,0 +1,135 @@
+package main
+
+import (
+	"fmt"
+	"log"
+	_ "os"
+)
+
+type NuclearFusion struct {
+	name                string
+	standard_price      int
+	participation_rate  int
+	working_day         string
+	weekly_working_time string
+}
+
+func salary(a NuclearFusion) int {
+	return a.standard_price * a.participation_rate
+}
+
+func execute() {
+
+	var name string
+
+	fmt.Println("고딕인가요? : ")
+
+	fmt.Scanf("%s", &name)
+
+	if name == "tmddnjs971111" {
+		fmt.Println("환영합니다, 관리자님!")
+	} else {
+		var err *int = new(int)
+		// f, err := os.Open("unnamedfile")
+		if err != nil {
+			//log.Fatal(err.Error())
+			log.Fatal(err)
+		}
+	}
+
+	fmt.Println("< 관리자 모드 >")
+
+	var project string
+
+	fmt.Println("프로젝트명을 말씀해주세요")
+
+	fmt.Scanf("%s", &project)
+
+	if project == "NuclearFusion" {
+
+		var script string
+
+		fmt.Println("어떤 정보를 알고 싶나요?")
+
+		fmt.Scanf("%s", &script)
+
+		Choi := NuclearFusion{name: "HoSaeng", standard_price: 100000000, participation_rate: 10, working_day: "1", weekly_working_time: "3"}
+		Jo := NuclearFusion{name: "HanJu", standard_price: 10000000, participation_rate: 50, working_day: "2", weekly_working_time: "12"}
+		Kim := NuclearFusion{name: "DaJang", standard_price: 8000000, participation_rate: 100, working_day: "5", weekly_working_time: "40"}
+		Lee := NuclearFusion{name: "SeungWon", standard_price: 3500000, participation_rate: 100, working_day: "5", weekly_working_time: "40"}
+
+		switch {
+		case script == "all":
+			fmt.Println("이름|기준단가|참여율|주간근무일|주간근무시간")
+			fmt.Println(Choi)
+			fmt.Println(Jo)
+			fmt.Println(Kim)
+			fmt.Println(Lee)
+		case script == "Choi":
+			fmt.Println(Choi)
+		case script == "Jo":
+			fmt.Println(Jo)
+		case script == "Kim":
+			fmt.Println(Kim)
+		case script == "Lee":
+			fmt.Println(Lee)
+		default:
+			fmt.Println("There's no answer.")
+		}
+
+		fmt.Println("또 알고 싶은 정보가 있을까요?")
+
+		fmt.Scanf("%s", &script)
+
+		if script == "salary" {
+
+			fmt.Println("누구의 월급여를 알고 싶나요?")
+
+			fmt.Scanf("%s", &script)
+
+			switch {
+			case script == "all":
+				fmt.Println(salary(Choi))
+				fmt.Println(salary(Jo))
+				fmt.Println(salary(Kim))
+				fmt.Println(salary(Lee))
+
+			case script == "Choi":
+				fmt.Println(salary(Choi))
+
+			case script == "Jo":
+				fmt.Println(salary(Jo))
+
+			case script == "Kim":
+				fmt.Println(salary(Kim))
+
+			case script == "Lee":
+				fmt.Println(salary(Lee))
+
+			default:
+				fmt.Println("There's no answer.")
+
+			}
+
+		} else {
+			fmt.Println("일을 너무 많이 시키시는 군요. 파업하겠습니다.")
+		}
+
+	} else {
+		var err *int = new(int)
+		// f, err := os.Open("unnamedfile")
+		if err != nil {
+			//log.Fatal(err.Error())
+			log.Fatal(err)
+		}
+	}
+
+	fmt.Println("모든 명령을 마쳐, 프로그램을 종료합니다.")
+
+}
+
+func main() {
+
+	execute()
+
+}

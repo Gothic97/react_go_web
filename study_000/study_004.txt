@@ -1,0 +1,15 @@
+package main
+
+import "fmt"
+
+func main() {
+
+	m, n := 5, 5
+
+	multiply := func(c int) int {
+		return m*n + c
+	}
+
+	fmt.Println(multiply(5))
+
+}

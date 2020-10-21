@@ -1,0 +1,31 @@
+package main
+
+import (
+	"fmt"
+	"os"
+)
+
+func errorCheck1(e error) {
+	if e != nil {
+		panic(e)
+	}
+}
+
+func errorCheck2(e error) {
+	if e != nil {
+		fmt.Println(e)
+	}
+}
+
+func main() {
+
+	file, err := os.Create("test.txt")
+	errorCheck1(err)
+
+	s1 := []byte{48, 49, 50, 51, 55}
+	n1, err := file.Write(s1)
+	errorCheck2(err)
+
+	fmt.Printf("쓰기 작업(1) 완료 (%d bytes)\n", n1)
+
+}
